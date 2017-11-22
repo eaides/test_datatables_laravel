@@ -32,6 +32,8 @@
     <!-- DataTables -->
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 
+    <script src="{{ asset('js/ellipsis.js') }}"></script>
+
     <script>
         $(function () {
             $('#users-table').DataTable({
@@ -45,7 +47,12 @@
                     {data: 'created_at'},
                     {data: 'updated_at'},
                     {data: 'action', orderable: false, searchable: false}
-                ]
+                ],
+                columnDefs: [{
+                    targets: [1,2],
+                    data: null, // Use the full data source object for the renderer's source
+                    render: jQuery.fn.dataTable.render.ellipsis(20)
+                }],
             });
 
             $(document).on('click', '.dt_edit', function(e) {
