@@ -17,7 +17,7 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/eloquent/collection')
-                    ->assertSee('Eloquent Collection');
+                    ->assertSee('Laravel');
         });
     }
 }
