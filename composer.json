@@ -15,6 +15,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
+        "barryvdh/laravel-ide-helper": "^2.4",
         "fzaninotto/faker": "~1.4",
         "laravel/browser-kit-testing": "^4.0",
         "laravel/dusk": "^3.0",
@@ -43,6 +44,8 @@
     "extra": {
         "laravel": {
             "dont-discover": [
+                "laravel/dusk",
+                "barryvdh/laravel-ide-helper"
             ]
         }
     },
